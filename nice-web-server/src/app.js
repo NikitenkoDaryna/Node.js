@@ -11,6 +11,7 @@ const fastify = require('fastify')({
 })
 const helmet = require('fastify-helmet')
 const path = require('path')
+const port = process.env.PORT || 3000
 
 // Define paths
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -43,7 +44,7 @@ fastify.register(require('../routes/routes'))
 
 const start = async () => {
     try {
-        await fastify.listen(3000)
+        await fastify.listen(port)
         fastify.log.info(`server listening on ${fastify.server.address().port}`)
     } catch (err) {
         fastify.log.error(err)

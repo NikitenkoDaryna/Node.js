@@ -1,5 +1,5 @@
 console.log('Script has been loaded!')
-const url = 'http://localhost:3000/weather?address='
+const url = '/weather?address='
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
